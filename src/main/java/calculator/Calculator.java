@@ -52,11 +52,8 @@ public class Calculator {
                         {
                             System.out.println("You have entered either a negative value. Factorial cannot be calculated for negative value!!\n");
                         }
-                        else if(calculator.num1>20) {
-                            System.out.println("please enter value less than 20 else it overflows");
-                        }
                         else
-                            System.out.println("The Factorial of " + calculator.num1 + " is: " + callFact((int) calculator.num1));
+                            System.out.println("The Factorial of " + calculator.num1 + " is: " + callFact(calculator.num1));
 
                     } catch (InputMismatchException error) {
                         System.out.println("Please enter input in integer format");
@@ -70,8 +67,8 @@ public class Calculator {
                     try {
                         System.out.print("\nEnter number: ");
                         calculator.num1 = scanner.nextDouble();
-                        if (calculator.num1 < 0)
-                            System.out.println("You have entered negative value. Logarithm cannot be calculated for negative value!!\n");
+                        if (calculator.num1 <= 0)
+                            System.out.println("You have entered either 0 or negative value. Logarithm cannot be calculated for such values!!\n");
                         else
                             System.out.println("The Natural logarithm of " + calculator.num1 + " is: " + callNatLog(calculator.num1));
                     } catch (InputMismatchException error) {
@@ -112,11 +109,15 @@ public class Calculator {
 
     public static double callPower(double n1, double n2)
     {
+        if(n1==0 && n2==0)
+            return Double.NaN;
         return Math.pow(n1, n2);
     }
 
-    public static long callFact(int n)
+    public static double callFact(double n)
     {
+        if(n<0)
+            return Double.NaN;
         if(n==0)
             return 1;
         else
