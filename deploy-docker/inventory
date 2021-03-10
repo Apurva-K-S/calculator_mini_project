@@ -1,1 +1,4 @@
 localhost ansible_user=apurva
+
+[ubuntu20]
+172.16.144.178 ansible_user=apurva1
