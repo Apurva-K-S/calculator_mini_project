@@ -156,6 +156,5 @@ public class Calculator {
         }
         logging.info("[INFO]: output of Factorial function: "+ res);
         return res;
-
     }
 }
