@@ -10,6 +10,7 @@ public class Calculator {
     private static final Logger logging = LogManager.getLogger(Calculator.class);
     private double num1, num2;
     private static final Scanner scanner = new Scanner(System.in);
+
     public Calculator(){
 
     }
@@ -18,12 +19,12 @@ public class Calculator {
 
         Calculator calculator = new Calculator();
 
-        System.out.println("Welcome to Calculator Devops Mini project. ");
+        System.out.println("Welcome to Calculator Devops Mini project!!");
         int ch;
         boolean flag=true;
         while(flag){
-            System.out.println("\n1. Square root\n2. Factorial\n3. Natural Logarithm\n4. Power Function\n5. Exit");
-            System.out.println("\nchoose an option: ");
+            System.out.println("1. Square root\n2. Factorial\n3. Natural Logarithm\n4. Power Function\n5. Exit");
+            System.out.println("choose an option: ");
 
             try {
                 ch = scanner.nextInt();
@@ -38,13 +39,13 @@ public class Calculator {
             switch (ch) {
                 case 1:
 
-                    System.out.print("\nEnter number for squareroot: ");
+                    System.out.print("\nEnter number for square root: ");
                     calculator.num1 = scanner.nextDouble();
 
                     if(calculator.num1 < 0)
                     {
                         System.out.println("please enter positive value\n");
-                        logging.error("[ERROR]: Squareroot is not defined for Negative numbers");
+                        logging.error("[ERROR]: Square root is not defined for Negative numbers");
                     }
                     else
                         System.out.println("The Square root of " + calculator.num1 + " is: " + callSQRT(calculator.num1));
